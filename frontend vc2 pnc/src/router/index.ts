@@ -30,12 +30,22 @@ const router = createRouter({
       path: '/post',
       name: 'post',
       component: () => import('../views/Web/Post/ListView.vue')
+    },
+    {
+      path: '/forgot-password',
+      name: 'forgot_pwd',
+      component: () => import('../views/Admin/Auth/ForgetPwd.vue')
+    },
+    {
+      path: '/reset-password',
+      name: 'reset_pwd',
+      component: () => import('../views/Admin/Auth/ResetPwd.vue')
     }
   ]
 })
 
 router.beforeEach(async (to, from, next) => {
-  const publicPages = ['/login']
+  const publicPages = ['/login','/forgot-password','/reset-password']
   const authRequired = !publicPages.includes(to.path)
   const store = useAuthStore()
 

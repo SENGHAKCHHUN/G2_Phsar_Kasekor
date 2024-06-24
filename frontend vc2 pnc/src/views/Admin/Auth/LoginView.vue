@@ -5,30 +5,33 @@
       <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
       <el-form @submit="onSubmit">
         <el-form-item :error="emailError">
+          <label for="email">Your email</label>
           <el-input placeholder="Email Address" v-model="email" size="large" />
         </el-form-item>
 
         <el-form-item :error="nameError" class="mt-8">
+          <label for="email">Your Password</label>
           <el-input placeholder="Password" v-model="password" size="large" type="password" />
+          <p class="text-center text-sm text-gray-600 mt-3">
+            <router-link to="/forgot-password">Forgot Password?</router-link>
+          </p>
         </el-form-item>
 
         <div>
-          <el-button
-            size="large"
-            class="mt-3 w-full"
-            :disabled="isSubmitting"
-            type="primary"
-            native-type="submit"
-            >Submit</el-button
-          >
+          <el-button size="large" class="mt-3 w-full" :disabled="isSubmitting" type="primary"
+            native-type="submit">Submit</el-button>
         </div>
+        <p class="text-center text-sm text-gray-600 mt-3">
+          Don't have an account? <router-link to="/register">Register</router-link>
+        </p>
+
       </el-form>
     </el-card>
   </div>
 </template>
 
 <script setup lang="ts">
-import axiosInstance from '@/plugins/axios'
+import axiosInstance from '@/plugins/axios';
 import { useField, useForm } from 'vee-validate'
 import * as yup from 'yup'
 import { useRouter } from 'vue-router'

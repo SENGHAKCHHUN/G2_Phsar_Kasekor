@@ -45,7 +45,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
-  const publicPages = ['/login','/forgot-password','/reset-password']
+  const publicPages = ['/login','/forgot-password','/reset-password', '/app.vue']
   const authRequired = !publicPages.includes(to.path)
   const store = useAuthStore()
 

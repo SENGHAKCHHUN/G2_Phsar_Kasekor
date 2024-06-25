@@ -14,7 +14,7 @@ import { Icon } from '@iconify/vue'
       <a
         href="/post"
         class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"
-        >Post</a
+        >HOME</a
       >
       <a
         href="/team"
@@ -35,7 +35,7 @@ import { Icon } from '@iconify/vue'
 
     <!-- Sign In -->
     <div>
-      <div class="px-4 py-2 rounded font-semibold">Sign In</div>
+      <div class="px-4 py-2 rounded font-semibold text-dark">Sign In</div>
     </div>
   </header>
 </template>
